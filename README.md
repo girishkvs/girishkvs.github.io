@@ -1,6 +1,6 @@
 # Girish Konda
 
-Personal portfolio for [girishkvs.github.io](https://girishkvs.github.io/).
+Personal portfolio for [girishkonda.com](https://girishkonda.com/), hosted on GitHub Pages.
 
 A text-first personal profile built with HTML and CSS, with a responsive layout.
 No build step, JavaScript
@@ -49,6 +49,11 @@ Open `http://127.0.0.1:8080`.
 Publish the `main` branch from the repository root. The `.nojekyll` file tells
 GitHub Pages to serve the files without Jekyll processing.
 
-When connecting a custom domain, update the canonical and Open Graph URLs in
-`index.html`, the sitemap location in `robots.txt`, and the URL in `sitemap.xml`.
-Configure and verify the domain through GitHub Pages before changing DNS.
+The `CNAME` file declares `girishkonda.com` as the custom domain. The canonical
+and Open Graph URLs in `index.html`, the sitemap location in `robots.txt`, and
+the URL in `sitemap.xml` must use the same domain.
+
+Configure the custom domain in GitHub Pages before pointing DNS at GitHub.
+The apex domain uses GitHub Pages' published A records; `www` is a CNAME to
+`girishkvs.github.io`. Preserve unrelated DNS records and enforce HTTPS once
+the certificate is ready.
