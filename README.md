@@ -3,8 +3,9 @@
 Personal portfolio for [girishkonda.com](https://girishkonda.com/), hosted on GitHub Pages.
 
 A text-first personal profile built with HTML and CSS, with a responsive layout.
-No build step, JavaScript
-runtime, external fonts, analytics, or third-party dependencies are required.
+No build step, runtime framework, or external fonts are required. Reading and
+navigating the site do not depend on JavaScript. A single optional Cloudflare
+Web Analytics beacon collects site-wide traffic measurements.
 
 ## Preview locally
 
@@ -16,10 +17,42 @@ python -m http.server 8080 --bind 127.0.0.1
 
 Open `http://127.0.0.1:8080`.
 
+The analytics hostname is `girishkonda.com`, not localhost. Local previews are
+not production traffic; an analytics hostname/CORS rejection does not prevent
+the page from working.
+
+## Traffic analytics
+
+Cloudflare Web Analytics is installed manually using its non-blocking module
+snippet in `index.html`. The value in `data-cf-beacon` is a public website
+identifier, not an account login or API credential.
+
+- The website stays on GitHub Pages. Nameservers stay at Spaceship.
+- Do not enable a Cloudflare proxy, WAF, Bot Fight Mode, Turnstile, or visitor
+  challenge as part of this analytics setup.
+- Analytics being blocked or unavailable must not block access to the page.
+- Measurements cover visits and pageviews from direct, search, social, and
+  other entry routes, starting when the beacon was deployed.
+- Ad blockers, disabled JavaScript, and failed beacon requests can cause
+  undercounting. These are not complete server-access logs or unique-person counts.
+- Cloudflare does not currently log query strings or support UTM/custom-event
+  reporting. Keep the existing Short.io event links for QR-versus-printed-route
+  counts; do not treat those redirect counts as identical to site pageviews.
+- Cloudflare documents seven days of unsampled beacon retention, sampled or
+  aggregated reporting, and access to the previous six months of data. Export
+  reports when a longer record is needed.
+
+References: [manual setup](https://developers.cloudflare.com/web-analytics/get-started/#sites-not-proxied-through-cloudflare)
+and [coverage, sampling, and retention](https://developers.cloudflare.com/web-analytics/faq/).
+
 ## Update the site
 
 - Edit `index.html` for the biography, work experience, education, projects,
   contributions, standards/community participation, talks, and reviewing or judging.
+- The public contact address is `hello@girishkonda.com`, linked with `mailto:`
+  in the Contact section. Other mailbox addresses require separate approval.
+- Stack contact links in Email, LinkedIn, and GitHub groups, with each link on
+  its own line and both GitHub profiles together.
 - Edit `styles.css` for layout and presentation.
 - Update `favicon.svg` for the site icon.
 - Keep claims and contribution statuses supported by their linked public sources.
