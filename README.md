@@ -4,8 +4,8 @@ Personal portfolio for [girishkonda.com](https://girishkonda.com/), hosted on Gi
 
 A text-first personal profile built with HTML and CSS, with a responsive layout.
 No build step, runtime framework, or external fonts are required. Reading and
-navigating the site do not depend on JavaScript. A single optional Cloudflare
-Web Analytics beacon collects site-wide traffic measurements.
+navigating the site do not depend on JavaScript. The homepage and project
+page use the same optional Cloudflare Web Analytics beacon.
 
 ## Preview locally
 
@@ -23,16 +23,18 @@ the page from working.
 
 ## Traffic analytics
 
-Cloudflare Web Analytics is installed manually using its non-blocking module
-snippet in `index.html`. The value in `data-cf-beacon` is a public website
-identifier, not an account login or API credential.
+Cloudflare Web Analytics is installed manually using the same non-blocking
+module snippet and site identifier in `index.html` and
+`projects/mcp-pacemaker/index.html`. The value in `data-cf-beacon` is a public
+website identifier, not an account login or API credential.
 
 - The website stays on GitHub Pages. Nameservers stay at Spaceship.
 - Do not enable a Cloudflare proxy, WAF, Bot Fight Mode, Turnstile, or visitor
   challenge as part of this analytics setup.
 - Analytics being blocked or unavailable must not block access to the page.
-- Measurements cover visits and pageviews from direct, search, social, and
-  other entry routes, starting when the beacon was deployed.
+- Page measurements cover visits and pageviews from direct, search, social,
+  and other entry routes, starting when the beacon is deployed on each page.
+  The PDF does not run the beacon, and no download tracking is added.
 - Ad blockers, disabled JavaScript, and failed beacon requests can cause
   undercounting. These are not complete server-access logs or unique-person counts.
 - Cloudflare does not currently log query strings or support UTM/custom-event
@@ -49,6 +51,20 @@ and [coverage, sampling, and retention](https://developers.cloudflare.com/web-an
 
 - Edit `index.html` for the biography, work experience, education, projects,
   contributions, standards/community participation, talks, and reviewing or judging.
+- Keep `projects/mcp-pacemaker/index.html` a short product overview, not a
+  copy of the operational documentation. Aim for 200–250 main-content words,
+  with a hard cap of 275 including the collapsed demo caption.
+- Link both published release lines: 2.0.1 is current 2.x (`latest`), and
+  1.3.1 is maintained 1.3.x (`legacy`). Use their exact npm version URLs
+  and link the full guides for setup, upgrades and removal.
+- The unchanged demo GIF was recorded with 2.0.1. It is not evidence for
+  1.3.1, a speed benchmark, or general cross-editor compatibility.
+- Keep the homepage's `ProfilePage` / `Person` metadata aligned with visible
+  public facts and the existing GitHub and LinkedIn links.
+- Keep the completed San Francisco speaking entry distinct from upcoming
+  appearances. Its `Slides (PDF, 15 pages)` link points to the reviewed
+  presented-slide export at `talks/sreday-san-francisco-2026-10-02.pdf`.
+  Keep that PDF unchanged; it excludes notes and backup slides.
 - The public contact address is `hello@girishkonda.com`, linked with `mailto:`
   in the Contact section. Other mailbox addresses require separate approval.
 - Stack contact links in Email, LinkedIn, and GitHub groups, with each link on
@@ -82,9 +98,10 @@ and [coverage, sampling, and retention](https://developers.cloudflare.com/web-an
 Publish the `main` branch from the repository root. The `.nojekyll` file tells
 GitHub Pages to serve the files without Jekyll processing.
 
-The `CNAME` file declares `girishkonda.com` as the custom domain. The canonical
-and Open Graph URLs in `index.html`, the sitemap location in `robots.txt`, and
-the URL in `sitemap.xml` must use the same domain.
+The `CNAME` file declares `girishkonda.com` as the custom domain. Each page's
+canonical and Open Graph URLs, the sitemap location in `robots.txt`, and
+the URLs in `sitemap.xml` must use the same domain. The project guide's route
+is `/projects/mcp-pacemaker/`.
 
 Configure the custom domain in GitHub Pages before pointing DNS at GitHub.
 The apex domain uses GitHub Pages' published A records; `www` is a CNAME to
