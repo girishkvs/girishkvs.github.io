@@ -374,6 +374,12 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .project-page .demo-recording img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
 .project-page .demo-recording figcaption { margin-top: 10px; color: var(--muted); font-size: 13px; }
 
+.project-page .try-it { margin-top: 22px; }
+.project-page .try-it-label { margin: 0; color: var(--ink); font-weight: 500; }
+.project-page .try-it pre { margin: 8px 0 0; padding: 12px 14px; overflow-x: auto; border: 1px solid var(--line); font-family: var(--mono); font-size: 14px; line-height: 1.6; }
+.project-page .try-it pre code { font-size: 1em; }
+.project-page .try-it p:last-child { margin-top: 10px; color: var(--muted); font-size: 13px; }
+
 @media (max-width: 900px) {
   .page-shell { width: calc(100% - 64px); }
   .intro { grid-template-columns: minmax(0, 1fr) 160px; gap: 36px; }

@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light">
     <meta name="theme-color" content="#ffffff">
     <title>MCP Pacemaker | Girish Konda</title>
-    <meta name="description" content="MCP Pacemaker manages local MCP server processes outside your editor or CLI. See the demo, current 2.1.0 and maintained 1.3.1 releases, and full documentation.">
+    <meta name="description" content="MCP Pacemaker manages local MCP server processes outside your editor or CLI. See the demo, current 2.1.1 and maintained 1.3.1 releases, and full documentation.">
     <meta name="author" content="Girish Konda">
     <link rel="canonical" href="https://girishkonda.com/projects/mcp-pacemaker/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,8 +58,8 @@
             <li>Isolate sessions by default, with opt-in pre-warming and compatible process sharing.</li>
             <li>Inspect connected clients, server health, and durable logs through local web and terminal dashboards, without opening an editor.</li>
           </ul>
-          <details class="demo-recording">
-            <summary>Show demo</summary>
+          <details class="demo-recording" open>
+            <summary>Demo</summary>
             <figure>
               <img src="./demo-2.1.0.gif" width="1120" height="480" loading="lazy" alt="Clock-tool recording: two isolated launches, one shared launch, none added on reconnect.">
               <figcaption>
@@ -70,6 +70,17 @@
               </figcaption>
             </figure>
           </details>
+          <div class="try-it">
+            <p class="try-it-label">Try it</p>
+            <pre><code>npm install -g mcp-pacemaker
+mcp-pacemaker init</code></pre>
+            <p>
+              Node 22 or 24, run as a normal user. <code>init</code> asks before
+              it rewires any host and backs up the config files it edits;
+              <code>mcp-pacemaker uninstall</code> undoes it.
+              <a href="https://github.com/girishkvs/mcp-pacemaker#quick-start">Full setup guide</a>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -80,7 +91,7 @@
         <div class="section-content">
           <article class="record">
             <p>
-              <a href="https://www.npmjs.com/package/mcp-pacemaker/v/2.1.0">2.1.0</a> &mdash; Current 2.x (<code>latest</code>)<br>
+              <a href="https://www.npmjs.com/package/mcp-pacemaker/v/2.1.1">2.1.1</a> &mdash; Current 2.x (<code>latest</code>)<br>
               <a href="https://www.npmjs.com/package/mcp-pacemaker/v/1.3.1">1.3.1</a> &mdash; Maintained 1.3.x (<code>legacy</code>)
             </p>
             <p>
@@ -91,7 +102,7 @@
             <p class="record-links">
               <a href="https://github.com/girishkvs/mcp-pacemaker#quick-start">Getting started (2.x)</a>
               <a href="https://github.com/girishkvs/mcp-pacemaker/blob/v1.3.1/README.md">1.3.x documentation</a>
-              <a href="https://github.com/girishkvs/mcp-pacemaker#version-compatibility">Version guidance</a>
+              <a href="https://github.com/girishkvs/mcp-pacemaker/blob/main/docs/compatibility.md">Version guidance</a>
             </p>
             <p>
               Maintained by <a href="/#about">Girish Konda</a>.
