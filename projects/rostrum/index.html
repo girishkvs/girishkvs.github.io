@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#ffffff">
+    <title>rostrum | Girish Konda</title>
+    <meta name="description" content="rostrum cleans up talk recordings: it finds redos, retakes, repeats and dead air, lets you review every cut, then renders with ffmpeg and verifies the result. See the demo, install steps and the 0.1.0 release.">
+    <meta name="author" content="Girish Konda">
+    <link rel="canonical" href="https://girishkonda.com/projects/rostrum/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="rostrum | Girish Konda">
+    <meta property="og:description" content="Clean up talk recordings, by hand or through your agent. A short overview, a demo, and the 0.1.0 release.">
+    <meta property="og:url" content="https://girishkonda.com/projects/rostrum/">
+    <meta property="og:site_name" content="Girish Konda">
+    <meta name="twitter:card" content="summary">
+  </head>
+  <body class="project-page" id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="page-shell header-inner">
+        <a class="brand" href="/#about">Girish Konda</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/#experience">Experience</a>
+          <a href="/#work">Projects</a>
+          <a href="/#standards">Standards</a>
+          <a href="/#talks">Talks</a>
+          <a href="/#service">Reviewing</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell" id="main">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <h1 id="page-title">rostrum</h1>
+          <p class="intro-role">Clean up talk recordings, by hand or through your agent.</p>
+          <p>
+            Recording a talk in one take means restarting sentences, slides
+            and clicks. Cutting those by hand takes hours, and one bad join
+            ruins a clip. rostrum finds them, shows every proposed cut with
+            its reason, and leaves the decision to you.
+          </p>
+          <p>
+            It grew out of the scripts I used to edit my
+            <a href="https://www.youtube.com/watch?v=9VbGcnTuUCk">Conf42 talk</a>,
+            which cut a single 60-minute take down to 33 minutes.
+          </p>
+          <p class="intro-links">
+            <a href="https://github.com/girishkvs/rostrum">Source on GitHub</a>
+            <a href="https://pypi.org/project/rostrum/">Package on PyPI</a>
+          </p>
+          <ul class="detail-list" id="benefits">
+            <li>Finds spoken cues such as &ldquo;redo&rdquo;, retakes, repeats, long pauses and dead air, and flags unclear speech for you to check.</li>
+            <li>Lets you play each join in a local review page, keep or cut it, and nudge its edges.</li>
+            <li>Renders frame-accurate joins with ffmpeg and checks sync at every join, on Windows, macOS and Linux. It also runs as an MCP server, with plugins for Claude Code and GitHub Copilot CLI and an extension for Gemini CLI.</li>
+          </ul>
+          <details class="demo-recording" open>
+            <summary>Demo</summary>
+            <figure>
+              <img src="./demo-0.1.0.gif" width="960" height="570" loading="lazy" alt="rostrum on a short demo talk: init finds the cuts, the review page adjusts one, then import, render and verify.">
+              <figcaption>
+                A 58-second synthetic demo talk. The terminal shows the real
+                output, trimmed to the main lines.
+              </figcaption>
+            </figure>
+          </details>
+          <div class="try-it">
+            <p class="try-it-label">Try it</p>
+            <pre><code>uv tool install rostrum
+rostrum init talk.mp4</code></pre>
+            <p>
+              Needs Python 3.11 or newer and ffmpeg 6.1 or newer;
+              <code>pipx install rostrum</code> works too. The first run
+              downloads a speech model of about 480 MB. After that,
+              everything runs on your machine.
+              <a href="https://github.com/girishkvs/rostrum#quick-start">Full setup guide</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-section" id="releases" aria-labelledby="releases-title">
+        <div class="section-label">
+          <h2 id="releases-title">Releases</h2>
+        </div>
+        <div class="section-content">
+          <article class="record">
+            <p>
+              <a href="https://pypi.org/project/rostrum/0.1.0/">0.1.0</a> &mdash; First public release
+            </p>
+            <p>
+              Listed in the official
+              <a href="https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.girishkvs/rostrum">MCP Registry</a>
+              as <code>io.github.girishkvs/rostrum</code>, and on
+              <a href="https://glama.ai/mcp/servers/girishkvs/rostrum">Glama</a>.
+            </p>
+            <p class="record-links">
+              <a href="https://github.com/girishkvs/rostrum#quick-start">Getting started</a>
+              <a href="https://github.com/girishkvs/rostrum/releases/tag/v0.1.0">Release notes</a>
+              <a href="https://github.com/girishkvs/rostrum/blob/main/CHANGELOG.md">Changelog</a>
+            </p>
+            <p>
+              Maintained by <a href="/#about">Girish Konda</a>.
+              <a href="https://github.com/girishkvs/rostrum/issues">Report a bug on GitHub</a>,
+              or <a href="/#contact">contact me</a> for professional conversations.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer page-shell">
+      <span>&copy; 2026 Girish Konda</span>
+      <p>Personal site. Views are my own.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "c5b5879d4c044da8b5dd882e88ac175a"}'
+    ></script>
+  </body>
+</html>
